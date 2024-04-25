@@ -1,5 +1,9 @@
 const textArea = document.querySelector(".text-input-area");
 const mensagem = document.querySelector(".mensagem");
+const botaoOculto = document.querySelector(".btn-oculto");
+const infoOutput = document.querySelector(".info-output");
+
+/* Configurando botões */
 
 function btnEncriptar() {
     const textoEncriptado = encriptar(textArea.value);
@@ -7,8 +11,26 @@ function btnEncriptar() {
     textArea.value = "";
 }
 
+function btnCopiar() {
+    // Selecionar a área de transferência
+    const clipboard = navigator.clipboard;
+
+    // Copiar o texto para a área de transferência
+    clipboard.writeText(mensagem.value)
+ 
+}
+
+function btnDesencriptar() {
+    const textoDesencriptado = desencriptar(textArea.value);
+    mensagem.value = textoDesencriptado;
+    textArea.value = "";
+}
+
+
+/* Funções */
+
 function encriptar(stringEncriptada) {
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["ufat"]];
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "aniu"], ["o", "ober"], ["ufat"]];
     stringEncriptada = stringEncriptada.toLowerCase();
 
     for(let i = 0; i < matrizCodigo.length; i++) {
@@ -17,13 +39,10 @@ function encriptar(stringEncriptada) {
         }
     }
 
+    botaoOculto.classList.remove('btn-oculto');
+    infoOutput.style.display = 'none';
+    btnCopiar()
     return stringEncriptada;
-}
-
-function btnDesencriptar() {
-    const textoDesencriptado = desencriptar(textArea.value);
-    mensagem.value = textoDesencriptado;
-    textArea.value = "";
 }
 
 function desencriptar(stringDesencriptada) {
