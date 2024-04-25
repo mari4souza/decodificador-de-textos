@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-alura">
+            <img class="logo" src="./imagens/logo-alura.png" alt="logo alura">
+        </div>
+    </header>
+
+    <main>
+        <section id="left" class="input-area">
+            <textarea class="text-input-area" placeholder="Digite o texto aqui:" autofocus></textarea>
+
+            <div class="aviso-botoes">
+                <span class="aviso-input">
+                    <img src="./imagens/aviso.png" alt="aviso">
+                    Apenas letras minúsculas e sem acento.
+                </span>
+
+                <div class="botoes-input">
+                    <button id="botaoEncriptar" class="btn-encriptar" onclick="btnEncriptar()">CRIPTOGRAFAR</button>
+                    <button id="botaoDesencriptar" class="btn-desencriptar" onclick="btnDesencriptar()">DESCRIPTOGRAFAR</button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="right" class="output-area">
+            <img id="boneco" class="img-boneco" src="./imagens/boneco.png" alt="boneco">
+
+            <textarea class="mensagem" placeholder="Nenhuma mensagem encontrada"></textarea>
+
+            <p id="rightInfo" class="info-output">Insira o texto que deseja encriptar ou desencriptar.</p>
+
+            <button id="botaoCopiar" class="btn-copiar btn-oculto">COPIAR</button>
+
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
